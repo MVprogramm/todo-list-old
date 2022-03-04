@@ -8,4 +8,4 @@ HTML <br>
 CSS  <br>
 JS   <br>
 
-author: michael@valiahmetov@gmail.com
+author: michael.valiahmetov@gmail.com

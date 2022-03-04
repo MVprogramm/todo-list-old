@@ -17,12 +17,15 @@ const renderTasks = (tasksList) => {
 
   const tasks = tasksList.map((task) => {
     let li = document.createElement("li");
-    li.innerHTML = `<input type="checkbox" class="list__item-checkbox" />
-    ${task.text}`;
-    task.done
-      ? (li.className = "list__item list__item_done")
-      : (li.className = "list__item");
-
+    if (task.done) {
+      li.innerHTML = `<input type="checkbox" class="list__item-checkbox" checked />
+      ${task.text}`;
+      li.className = "list__item list__item_done";
+    } else {
+      li.innerHTML = `<input type="checkbox" class="list__item-checkbox" />
+      ${task.text}`;
+      li.className = "list__item";
+    }
     return li;
   });
 

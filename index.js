@@ -87,11 +87,11 @@ const createTaskListener = () => {
   const handleCreate = () => {
     if (input.value !== "") {
       tasks.push({
-        id: String(tasks.length),
+        id: String(tasks.length + 1),
         text: input.value,
         done: false,
       });
-
+      console.log(tasks);
       input.value = "";
     }
 

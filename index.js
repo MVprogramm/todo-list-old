@@ -87,7 +87,7 @@ const createTaskListener = () => {
   const handleCreate = () => {
     if (input.value !== "") {
       tasks.push({
-        id: tasks.length - 1,
+        id: String(tasks.length),
         text: input.value,
         done: false,
       });

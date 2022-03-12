@@ -31,11 +31,11 @@ const renderTasks = () => {
     .map((task) => {
       let li = document.createElement("li");
       if (task.done) {
-        li.innerHTML = `<input id="${task.id}" type="checkbox" class="list__item-checkbox" checked />
+        li.innerHTML = `<input data-id="${task.id}" type="checkbox" class="list__item-checkbox" checked />
       ${task.text}`;
         li.className = "list__item list__item_done";
       } else {
-        li.innerHTML = `<input id="${task.id}" type="checkbox" class="list__item-checkbox" />
+        li.innerHTML = `<input data-id="${task.id}" type="checkbox" class="list__item-checkbox" />
       ${task.text}`;
         li.className = "list__item";
       }
@@ -61,7 +61,9 @@ const renderTasks = () => {
  */
 const listListener = (elem) => {
   const handleList = (event) => {
-    const taskChecked = tasks.filter((task) => task.id === event.target.id);
+    const taskChecked = tasks.filter(
+      (task) => task.id === event.target.dataset.id
+    );
     taskChecked[0].done = !taskChecked[0].done;
 
     renderTasks();

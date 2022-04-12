@@ -32,17 +32,3 @@ export const addTask = (task) => {
 
   localStorage.setItem("tasksList", JSON.stringify(tasksList));
 };
-/*
-export const changeTask = (updateTask) => {
-  const updateTaskId = updateTask.id;
-  const tasksList = getTasks();
-
-  tasksList = tasksList.map((task) => {
-    if (task.id === updateTaskId) {
-      task.done = Boolean(task.done);
-    task.act = new Date(task.act);
-    }
-  });
-
-}
-*/
